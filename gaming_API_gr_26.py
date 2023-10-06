@@ -1,4 +1,7 @@
 import gaming_tools
+import time.time
+import random.randint
+
 def launch():
 	print("pour jouer ...")
 ## info
@@ -12,10 +15,11 @@ def help_game():
 	print("")
 
 def ship_state(ship):
-	gaming_tools.get_ship_location(ship)
-	gaming_tools.get_ship_speed(ship)
-	gaming_tools.is_ship_broken(ship)
-	gaming_tools.get_when_ship_is_ready(ship)
+	loc = gaming_tools.get_ship_location(ship)
+	speed = gaming_tools.get_ship_speed(ship)
+	broken = gaming_tools.is_ship_broken(ship)
+	ready = gaming_tools.get_when_ship_is_ready(ship)
+	print("")
 
 def planet_position():
 	pass
