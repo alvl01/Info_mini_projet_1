@@ -24,6 +24,9 @@ def ship_state(ship):#anderson
 	----------
 	ship: name of the ship (str)
 	"""
+	if not gaming_tools.ship_exists(ship):
+		error(1)
+		return
 	loc = gaming_tools.get_ship_location(ship)
 	speed = gaming_tools.get_ship_speed(ship)
 	broken = gaming_tools.is_ship_broken(ship)
@@ -39,6 +42,9 @@ def planet_position(planet):#ammar
 	----------
 	planet: name of the planet (str)
 	"""
+	if not gaming_tools.planet_exists(ship):
+		error(2)
+		return
 	return
 
 def planet_resources(planet):#abdelaziz
@@ -49,7 +55,9 @@ def planet_resources(planet):#abdelaziz
 	----------
 	planet: name of the planet (str)
 	"""
-
+	if not gaming_tools.planet_exists(ship):
+		error(2)
+		return
 	return
 
 ## Action
@@ -61,6 +69,9 @@ def move(ship):#Alessandro
 	----------
 	ship: name of the ship (str)
 	"""
+	if not gaming_tools.ship_exists(ship):
+		error(1)
+		return
 
 	return
 
@@ -72,6 +83,9 @@ def upgrade(ship):#abdelaziz
 	----------
 	ship: name of the ship (str)
 	"""
+	if not gaming_tools.ship_exists(ship):
+		error(1)
+		return
 	return
 
 def repare(ship):#jugurtha
@@ -82,6 +96,9 @@ def repare(ship):#jugurtha
 	----------
 	ship: name of the ship (str)
 	"""
+	if not gaming_tools.ship_exists(ship):
+		error(1)
+		return
 	return
 
 def create_planet(name):#anderson
@@ -93,6 +110,9 @@ def create_planet(name):#anderson
 	----------
 	name: name of the planet
 	"""
+	if not gaming_tools.planet_exists(ship):
+		error(4)
+		return
 	return
 
 def create_ship(name):#ammar
@@ -104,6 +124,20 @@ def create_ship(name):#ammar
 	----------
 	name: name of the ship
 	"""
+	if gaming_tools.ship_exists(ship):
+		error(3)
+		return
+	return
+
+def error(value):#Alessandro
+	if value == 1:
+		print("error the ship doesn't exist")
+	elif value == 2:
+		print("error the planet doesn't exist")
+	elif value == 3:
+		print("ship name already used")
+	elif value == 4:
+		print("planet name already used")
 	return
 
 
