@@ -2,10 +2,8 @@ import gaming_tools
 import time.time
 import random.randint
 
-def launch():
-	print("pour jouer ...")
 ## info
-def help_game():
+def help_game():#jugurtha
 	print("ship_state affiche ...")
 	print("")
 	print("")
@@ -14,26 +12,35 @@ def help_game():
 	print("")
 	print("")
 
-def ship_state(ship):
+def ship_state(ship):#anderson
 	loc = gaming_tools.get_ship_location(ship)
 	speed = gaming_tools.get_ship_speed(ship)
 	broken = gaming_tools.is_ship_broken(ship)
 	ready = gaming_tools.get_when_ship_is_ready(ship)
 	print("")
 
-def planet_position():
+def planet_position():#ammar
 	pass
-def get_time():
-	pass
-def planet_resources():
+
+def planet_resources():#abdelaziz
 	pass
 
 ## Action
-def move():
+def move():#Alessandro
 	pass
 
-def upgrade():
+def upgrade():#abdelaziz
 	pass
 
-def repare():
+def repare():#jugurtha
+	pass
+
+def create_planet():#anderson
+	pass
+
+def create_ship():#ammar
+	pass
+
+
+def reset():#Alessandro
 	pass
