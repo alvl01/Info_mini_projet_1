@@ -33,23 +33,10 @@ def ship_state(ship):#anderson
 	ready = gaming_tools.get_when_ship_is_ready(ship)
 	print("")
 	return
-
-def planet_position(planet):#ammar
+# planet ressource et planet postion on ete combiné
+def planet_state(planet):#ammar#abdelaziz
 	"""
-	display planet position
-
-	parameters
-	----------
-	planet: name of the planet (str)
-	"""
-	if not gaming_tools.planet_exists(ship):
-		error(2)
-		return
-	return
-
-def planet_resources(planet):#abdelaziz
-	"""
-	display the quantity of ressources of a planet
+	display information about the planet
 
 	parameters
 	----------
