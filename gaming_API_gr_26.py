@@ -129,7 +129,7 @@ def create_ship(name):#ammar
 		return
 	return
 
-def error(value):#Alessandro
+def error(value):
 	if value == 1:
 		print("error the ship doesn't exist")
 	elif value == 2:
