@@ -48,7 +48,9 @@ def planet_state(planet):#ammar#abdelaziz
 	return
 
 ## Action
-def move(ship):#Alessandro
+def get_distance(ship, planet):
+
+def move(ship, planet):#Alessandro
 	"""
 	move the ship
 
@@ -100,7 +102,7 @@ def create_planet(name):#anderson
 	----------
 	name: name of the planet
 	"""
-	if not gaming_tools.planet_exists(ship):
+	if gaming_tools.planet_exists(ship):
 		error(4)
 		return
 	return
