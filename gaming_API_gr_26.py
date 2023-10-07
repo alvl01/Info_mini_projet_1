@@ -4,8 +4,7 @@ import random.randint
 
 ## info
 def help_game():#jugurtha
-	"""
-	explain how to use the other functions
+	"""Explain how to use the other functions
 	"""
 	print("ship_state affiche ...")
 	print("")
@@ -17,8 +16,7 @@ def help_game():#jugurtha
 	return
 
 def ship_state(ship):#anderson
-	"""
-	diplay information about the ship
+	"""Diplay information about the ship
 
 	Parameters
 	----------
@@ -35,8 +33,7 @@ def ship_state(ship):#anderson
 	return
 # planet ressource et planet postion on ete combiné
 def planet_state(planet):#ammar#abdelaziz
-	"""
-	display information about the planet
+	"""Display information about the planet
 
 	Parameters
 	----------
@@ -49,8 +46,7 @@ def planet_state(planet):#ammar#abdelaziz
 
 ## Action
 def get_distance(ship, planet):
-	"""
-	calcul distance between ship and planet
+	"""Calculate the distance between ship and planet
 
 	Parameters
 	----------
@@ -59,7 +55,7 @@ def get_distance(ship, planet):
 
 	Returns
 	------
-	distance: 
+	distance: distance ship planet(float)
 	"""
 	if not gaming_tools.ship_exists(ship):
 		error(1)
@@ -72,13 +68,22 @@ def get_distance(ship, planet):
 	return ((ship_x - planet_x) ** 2 + (ship_y - planet_y) ** 2) ** (1/2)
 
 def text_time(time):
+	"""Return the time in format "x min y s"
+
+	Parameters
+	----------
+	time: a time to format (int)
+
+	Returns
+	------
+	fomated_time: formated time(str)
+	"""
 	return ("" if time // 60 == 0 else str(time // 60) + "min ") + str(time % 60) + "s"
 
 
 
 def move(ship, planet):#Alessandro
-	"""
-	move the ship
+	"""Move the ship
 
 	Parameters
 	----------
@@ -111,8 +116,7 @@ def move(ship, planet):#Alessandro
 	return
 
 def upgrade(ship):#abdelaziz
-	"""
-	uprade the ship
+	"""Uprade the ship
 	
 	Parameters
 	----------
@@ -124,8 +128,7 @@ def upgrade(ship):#abdelaziz
 	return
 
 def repare(ship):#jugurtha
-	"""
-	repare the ship
+	"""Repare the ship
 
 	Parameters
 	----------
@@ -137,9 +140,7 @@ def repare(ship):#jugurtha
 	return
 
 def create_planet(name):#anderson
-	"""
-	create a planet
-	display a confirmation
+	"""Create a planet
 
 	Parameters
 	----------
@@ -148,12 +149,11 @@ def create_planet(name):#anderson
 	if gaming_tools.planet_exists(ship):
 		error(4)
 		return
+	#display a confirmation
 	return
 
 def create_ship(name):#ammar
-	"""
-	create a ship
-	display a confirmation
+	"""Create a ship
 
 	Parameters
 	----------
@@ -162,9 +162,16 @@ def create_ship(name):#ammar
 	if gaming_tools.ship_exists(ship):
 		error(3)
 		return
+	#display a confirmation
 	return
 
 def error(value):
+	"""Display error to the user
+
+	Parameters
+	----------
+	value: error number (int)
+	"""
 	if value == 1:
 		print("error the ship doesn't exist!")
 	elif value == 2:
