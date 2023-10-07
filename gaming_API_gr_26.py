@@ -80,12 +80,18 @@ def move(ship, planet):#Alessandro
 	if gaming_tools.get_when_ship_is_ready(ship) != 0:
 		errror(6)
 		return
+	# change position of the ship
 	ship_speed = gaming_tools.get_ship_speed(ship)
 	distance = get_distance(ship, planet)
 	time = distance / ship_speed
 	gaming_tools.set_ship_location(ship, planet)
+	# is the ship broken
+	if not random.randint(0, 2):
+		gaming_tools.set_ship_broken(ship, True)
+	# check if he is gonna win
 	if gaming_tools.get_planet_location(planet) == (1000, 1000):
 		print("you will won in", time, "s")
+	# set waiting time
 	gaming_tools.set_when_ship_is_ready(ship, time)
 	return
 
