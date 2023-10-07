@@ -42,6 +42,9 @@ def planet_state(planet):#ammar#abdelaziz
 	if not gaming_tools.planet_exists(ship):
 		error(2)
 		return
+	location = gaming_tools.get_planet_location(planet)
+	resources = gaming_tools.get_planet_ressources(planet)
+	print("")
 	return
 
 def get_distance(ship, planet):
@@ -124,6 +127,16 @@ def upgrade(ship):#abdelaziz
 	if not gaming_tools.ship_exists(ship):
 		error(1)
 		return
+	if gaming_tools.is_ship_broken(ship):
+		error(7)
+		return
+	if gaming_tools.get_planet_ressources(planet) < upgrade:
+		error(8)
+		return
+	speed = gaming_tools.get_ship_speed(ship) + upgrade
+	gaming_tools.set_ship_speed(ship, speed)
+	time = 40 * (upgrade**2)
+	gaming_tools.set_when_ship_is_ready(ship, time.time() + time)
 	return
 
 def repare(ship):#jugurtha
@@ -183,6 +196,10 @@ def error(value):# everyone just add error that you need
 		print("the ship is broken you can not move it!")
 	elif value == 6:
 		print("the ship is not ready yet!")
+	elif value == 7:
+		print("the ship is broken you can not upgrade it!")
+	elif value == 8:
+		print("not enough ressources!")
 	return
 
 
