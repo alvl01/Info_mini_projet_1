@@ -164,7 +164,7 @@ def create_ship(name):#ammar
 	#display a confirmation
 	return
 
-def error(value):
+def error(value):# everyone just add error that you need
 	"""Display error to the user
 
 	Parameters
