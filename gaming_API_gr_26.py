@@ -103,15 +103,15 @@ def move(ship, planet):#Alessandro
 	# change position of the ship
 	ship_speed = gaming_tools.get_ship_speed(ship)
 	distance = get_distance(ship, planet)
-	time = distance / ship_speed
+	deltatime = int(distance / ship_speed)
 	gaming_tools.set_ship_location(ship, planet)
 	# is the ship broken
 	if not random.randint(0, 2):
 		gaming_tools.set_ship_broken(ship, True)
 	# display the time
-	print("you will land in", text_time(int(time)))
+	print("you will land in", text_time(deltatime))
 	# set waiting time
-	gaming_tools.set_when_ship_is_ready(ship, time)
+	gaming_tools.set_when_ship_is_ready(ship, time.time() + deltatime)
 	return
 
 def upgrade(ship):#abdelaziz
