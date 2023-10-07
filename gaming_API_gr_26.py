@@ -77,9 +77,16 @@ def move(ship, planet):#Alessandro
 	if gaming_tools.is_ship_broken(ship):
 		error(5)
 		return
+	if gaming_tools.get_when_ship_is_ready(ship) != 0:
+		errror(6)
+		return
 	ship_speed = gaming_tools.get_ship_speed(ship)
 	distance = get_distance(ship, planet)
-
+	time = distance / ship_speed
+	gaming_tools.set_ship_location(ship, planet)
+	if gaming_tools.get_planet_location(planet) == (1000, 1000):
+		print("you will won in", time, "s")
+	gaming_tools.set_when_ship_is_ready(ship, time)
 	return
 
 def upgrade(ship):#abdelaziz
@@ -147,6 +154,8 @@ def error(value):
 		print("planet name already used!")
 	elif value == 5:
 		print("the ship is broken you can not move it!")
+	elif value == 6:
+		print("the ship is not ready yet!")
 	return
 
 
