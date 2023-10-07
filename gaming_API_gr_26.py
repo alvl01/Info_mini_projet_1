@@ -59,6 +59,10 @@ def move(ship):#Alessandro
 	if not gaming_tools.ship_exists(ship):
 		error(1)
 		return
+	if gaming_tools.is_ship_broken(ship):
+		error(5)
+		return
+
 
 	return
 
@@ -118,13 +122,15 @@ def create_ship(name):#ammar
 
 def error(value):
 	if value == 1:
-		print("error the ship doesn't exist")
+		print("error the ship doesn't exist!")
 	elif value == 2:
-		print("error the planet doesn't exist")
+		print("error the planet doesn't exist!")
 	elif value == 3:
-		print("ship name already used")
+		print("ship name already used!")
 	elif value == 4:
-		print("planet name already used")
+		print("planet name already used!")
+	elif value == 5:
+		print("the ship is broken you can not move it!")
 	return
 
 
