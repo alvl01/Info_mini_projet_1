@@ -44,7 +44,6 @@ def planet_state(planet):#ammar#abdelaziz
 		return
 	return
 
-## Action
 def get_distance(ship, planet):
 	"""Calculate the distance between ship and planet
 
@@ -80,7 +79,7 @@ def text_time(time):
 	"""
 	return ("" if time // 60 == 0 else str(time // 60) + "min ") + str(time % 60) + "s"
 
-
+## Action
 
 def move(ship, planet):#Alessandro
 	"""Move the ship
