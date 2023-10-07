@@ -59,6 +59,10 @@ def get_distance(ship, planet):
 	planet_x, planet_y = gaming_tools.get_planet_location(planet)
 	return ((ship_x - planet_x) ** 2 + (ship_y - planet_y) ** 2) ** (1/2)
 
+def text_time(time):
+	return (time // 60 == 0 ? "" : str(time // 60) + "min ") + str(time % 60) + "s"
+
+
 
 def move(ship, planet):#Alessandro
 	"""
@@ -89,7 +93,7 @@ def move(ship, planet):#Alessandro
 	if not random.randint(0, 2):
 		gaming_tools.set_ship_broken(ship, True)
 	# display the time
-	print("you will land in", time, "s")
+	print("you will land in", text_time(int(time)))
 	# set waiting time
 	gaming_tools.set_when_ship_is_ready(ship, time)
 	return
