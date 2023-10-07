@@ -49,6 +49,12 @@ def planet_state(planet):#ammar#abdelaziz
 
 ## Action
 def get_distance(ship, planet):
+	if not gaming_tools.ship_exists(ship):
+		error(1)
+		return
+	if not gaming_tools.planet_exists(ship):
+		error(2)
+		return
 	ship_x, ship_y = gaming_tools.get_ship_location(ship)
 	planet_x, planet_y = gaming_tools.get_planet_location(planet)
 	return ((ship_x - planet_x) ** 2 + (ship_y - planet_y) ** 2) ** (1/2)
@@ -71,6 +77,8 @@ def move(ship, planet):#Alessandro
 	if gaming_tools.is_ship_broken(ship):
 		error(5)
 		return
+	ship_speed = gaming_tools.get_ship_speed(ship)
+	distance = get_distance(ship, planet)
 
 	return
 
