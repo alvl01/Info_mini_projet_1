@@ -20,7 +20,7 @@ def ship_state(ship):#anderson
 	"""
 	diplay information about the ship
 
-	parameters
+	Parameters
 	----------
 	ship: name of the ship (str)
 	"""
@@ -38,7 +38,7 @@ def planet_state(planet):#ammar#abdelaziz
 	"""
 	display information about the planet
 
-	parameters
+	Parameters
 	----------
 	planet: name of the planet (str)
 	"""
@@ -49,6 +49,18 @@ def planet_state(planet):#ammar#abdelaziz
 
 ## Action
 def get_distance(ship, planet):
+	"""
+	calcul distance between ship and planet
+
+	Parameters
+	----------
+	ship: name of the ship (str)
+	planet: name of the planet (str)
+
+	Returns
+	------
+	distance: 
+	"""
 	if not gaming_tools.ship_exists(ship):
 		error(1)
 		return
@@ -68,7 +80,7 @@ def move(ship, planet):#Alessandro
 	"""
 	move the ship
 
-	parameters
+	Parameters
 	----------
 	ship: name of the ship (str)
 	"""
@@ -102,7 +114,7 @@ def upgrade(ship):#abdelaziz
 	"""
 	uprade the ship
 	
-	parameters
+	Parameters
 	----------
 	ship: name of the ship (str)
 	"""
@@ -115,7 +127,7 @@ def repare(ship):#jugurtha
 	"""
 	repare the ship
 
-	parameters
+	Parameters
 	----------
 	ship: name of the ship (str)
 	"""
@@ -129,7 +141,7 @@ def create_planet(name):#anderson
 	create a planet
 	display a confirmation
 
-	parameters
+	Parameters
 	----------
 	name: name of the planet
 	"""
@@ -143,7 +155,7 @@ def create_ship(name):#ammar
 	create a ship
 	display a confirmation
 
-	parameters
+	Parameters
 	----------
 	name: name of the ship
 	"""
