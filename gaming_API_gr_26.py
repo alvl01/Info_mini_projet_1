@@ -62,8 +62,6 @@ def move(ship):#Alessandro
 	if gaming_tools.is_ship_broken(ship):
 		error(5)
 		return
-	else:
-		print("yoloooooo")
 
 	return
 
