@@ -60,7 +60,7 @@ def get_distance(ship, planet):
 	return ((ship_x - planet_x) ** 2 + (ship_y - planet_y) ** 2) ** (1/2)
 
 def text_time(time):
-	return (time // 60 == 0 ? "" : str(time // 60) + "min ") + str(time % 60) + "s"
+	return ("" if time // 60 == 0 else str(time // 60) + "min ") + str(time % 60) + "s"
 
 
 
