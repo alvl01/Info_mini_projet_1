@@ -101,13 +101,19 @@ def text_time(time):
 
 ## Action
 
-def move(ship, planet):#Alessandro
+def move(ship="", planet=""):#Alessandro
 	"""Move the ship
 
 	Parameters
 	----------
 	ship: name of the ship (str)
 	"""
+	if not ship or not planet:
+		error(12)
+		return
+	if type(ship) != str or type(planet) != str:
+		error(11)
+		return
 	if not gaming_tools.ship_exists(ship):
 		error(1)
 		return
@@ -190,16 +196,36 @@ def repair(ship, planet): #jugurtha
 	
        
 
-def create_planet(name):#anderson
+def create_planet(name="", coord_x=-1, coord_y=-1):#anderson
 	"""Create a planet
 
 	Parameters
 	----------
-	name: name of the planet
+	name: name of the planet (str)
+	coord_x: x coordinate of the planet (int)
+	coord_y: y coordinate of the planet (int)
 	"""
+	if not name:
+		error(12)
+		return
+	if type(name) != str or type(coord_y) != int or type(coord_x) != int:
+		error(11)
+		return
 	if gaming_tools.planet_exists(name):
 		error(4)
 		return
+	if coord_x > 1000 or coord_y > 1000 or coord_x < 0 or coord_y < 0:
+		error(10)
+		return
+
+	ressources = random.randint(5, 20)
+
+	if gaming_tools.add_new_planet(name, ressources):
+		gaming_tools.set_planet_location(name, coord_x, coord_y)
+		print("the ship has been created")
+		return
+    print("it failed!")
+
 	#display a confirmation
 
 def create_ship(name):#ammar
@@ -207,7 +233,7 @@ def create_ship(name):#ammar
 
 	Parameters
 	----------
-	name: name of the ship
+	name: name of the ship (str)
 	"""
 	if gaming_tools.ship_exists(name):
 		error(3)
@@ -226,31 +252,26 @@ def error(value):# everyone just add error that you need
 	"""
 	if value == 1:
 		print("Error, the ship doesn't exist!")
-		return
 	elif value == 2:
 		print("Error, the planet doesn't exist!")
-		return
 	elif value == 3:
 		print("Error, the ship name already used!")
-		return
 	elif value == 4:
 		print("Error, the planet name already used!")
-		return
 	elif value == 5:
 		print("Error, the ship is broken, You cannot move it!")
-		return
 	elif value == 6:
 		print("Error, the ship is not ready yet!")
-		return
 	elif value == 7:
 		print("Error, the ship is broken you cannot upgrade it!")
-		return
 	elif value == 8:
 		print("Error, there's no enough ressources!")
-		return
 	elif value == 9:
-		print("Error, the ship is not repairable because it's not broken")
-		return
+		print("Error, the ship is not repairable because it's not broken!")
+	elif value == 10:
+		print("Error, the coordinates are not between 0 and 1000!")
+	elif value == 11:
+		print("Error, the type of the parameters did not matches!")
 
 
 def reset():#Alessandro
