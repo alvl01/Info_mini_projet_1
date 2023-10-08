@@ -47,7 +47,6 @@ def ship_state(ship):#anderson
 	broken = gaming_tools.is_ship_broken(ship)
 	ready = gaming_tools.get_when_ship_is_ready(ship)
 	print("")
-	return
 
 
 # planet ressource et planet postion on ete combiné
@@ -64,7 +63,6 @@ def planet_state(planet):#ammar#abdelaziz
 	location = gaming_tools.get_planet_location(planet)
 	resources = gaming_tools.get_planet_ressources(planet)
 	print("")
-	return
 
 def get_distance(ship, planet):
 	"""Calculate the distance between ship and planet
@@ -134,7 +132,6 @@ def move(ship, planet):#Alessandro
 	print("you will land in ", text_time(deltatime))
 	# set waiting time
 	gaming_tools.set_when_ship_is_ready(ship, time.time() + deltatime)
-	return
 
 def upgrade_ship(ship):#abdelaziz
 	"""Uprade the ship
@@ -156,7 +153,6 @@ def upgrade_ship(ship):#abdelaziz
 	gaming_tools.set_ship_speed(ship, speed)
 	time = 40 * (upgrade**2)
 	gaming_tools.set_when_ship_is_ready(ship, time.time() + time)
-	return
 
 def repair(ship, planet): #jugurtha
 	"""Repare the ship
@@ -205,7 +201,6 @@ def create_planet(name):#anderson
 		error(4)
 		return
 	#display a confirmation
-	return
 
 def create_ship(name):#ammar
 	"""Create a ship
@@ -220,8 +215,7 @@ def create_ship(name):#ammar
 	if gaming_tools.add_new_ship(name, 1, False):
         print("the ship has been created")
         return
-	#display a confirmation
-	return
+    print("it failed!")
 
 def error(value):# everyone just add error that you need
 	"""Display error to the user
@@ -257,7 +251,6 @@ def error(value):# everyone just add error that you need
 	elif value == 9:
 		print("Error, the ship is not repairable because it's not broken")
 		return
-	return
 
 
 def reset():#Alessandro
