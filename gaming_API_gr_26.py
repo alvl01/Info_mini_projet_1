@@ -151,8 +151,8 @@ def upgrade_ship(ship):#abdelaziz
 		return
 	speed = gaming_tools.get_ship_speed(ship) + upgrade
 	gaming_tools.set_ship_speed(ship, speed)
-	time = 40 * (upgrade**2)
-	gaming_tools.set_when_ship_is_ready(ship, time.time() + time)
+	upgrade_time = 40 * (upgrade**2)
+	gaming_tools.set_when_ship_is_ready(ship, time.time() + upgrade_time)
 
 def repair(ship, planet): #jugurtha
 	"""Repare the ship
