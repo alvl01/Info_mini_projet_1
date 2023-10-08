@@ -189,6 +189,8 @@ def repair(ship, planet): #jugurtha
 	print("Ship is now repaired and ready to start")
 	gaming_tools.set_ship_broken(ship, False)
 
+	gaming_tools.set_planet_resources(planet_resources - 3)
+
 
 
 	
