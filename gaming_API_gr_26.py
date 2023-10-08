@@ -119,7 +119,7 @@ def move(ship, planet):#Alessandro
 	if gaming_tools.is_ship_broken(ship):
 		error(5)
 		return
-	if gaming_tools.get_when_ship_is_ready(ship) != 0:
+	if not gaming_tools.get_when_ship_is_ready(ship):
 		error(6)
 		return
 	# change position of the ship
@@ -207,7 +207,7 @@ def create_planet(name):#anderson
 	#display a confirmation
 	return
 
-def create_ship(ship):#ammar
+def create_ship(name):#ammar
 	"""Create a ship
 
 	Parameters
