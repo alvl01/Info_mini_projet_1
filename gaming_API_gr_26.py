@@ -152,7 +152,7 @@ def upgrade_ship(ship):#abdelaziz
 	if gaming_tools.get_planet_ressources(planet) < upgrade:
 		error(8)
 		return
-	speed = gaming_tools.get_ship_speed(ship_name) + upgrade
+	speed = gaming_tools.get_ship_speed(ship) + upgrade
 	gaming_tools.set_ship_speed(ship, speed)
 	time = 40 * (upgrade**2)
 	gaming_tools.set_when_ship_is_ready(ship, time.time() + time)
