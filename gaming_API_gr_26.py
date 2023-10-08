@@ -4,7 +4,16 @@ import random.randint
 
 ## info
 def help_game():#jugurtha
-	"""Explain how to use the other functions
+	"""Explain how to use the functions of this game.
+	Available functions:
+	1. create_ship(ship_name) - Create a new ship with the given name.
+	2. move_ship(ship_name, destination_planet) - Move the ship to the destination planet.
+	3. repair_ship(ship_name) - Repair a broken ship if enough resources are available.
+	4. planet_exists(planet_name) - Check if a planet with the given name exists.
+	5. add_new_planet(planet_name, resources) - Add a new planet with the specified resources.
+	6. get_distance(ship_name, planet_name) - Get the distance between ship and the planet.")
+	7. planet_state(planet_name) - Display information about the planet
+	8. ship_state(planet_name) - Display information about the ship
 	"""
 	print("ship_state affiche ...")
 	print("")
@@ -158,7 +167,7 @@ def create_planet(name):#anderson
 	----------
 	name: name of the planet
 	"""
-	if gaming_tools.planet_exists(ship):
+	if gaming_tools.planet_exists(name):
 		error(4)
 		return
 	#display a confirmation
@@ -171,9 +180,12 @@ def create_ship(name):#ammar
 	----------
 	name: name of the ship
 	"""
-	if gaming_tools.ship_exists(ship):
+	if gaming_tools.ship_exists(name):
 		error(3)
 		return
+	if gaming_tools.add_new_ship(name, 1, False):
+        print("the ship has been created")
+        return
 	#display a confirmation
 	return
 
