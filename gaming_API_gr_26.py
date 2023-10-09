@@ -107,6 +107,7 @@ def move(ship="", planet=""):#Alessandro
 	Parameters
 	----------
 	ship: name of the ship (str)
+	planet: name of planet where you want to go (str)
 	"""
 	if not ship or not planet:
 		error(12)
