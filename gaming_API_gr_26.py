@@ -10,9 +10,9 @@ def help_game():#jugurtha
 	print("Available functions :")
 	print("1. create_planet(planet_name) - Create a new planet with the given name.")
 	print("2. create_ship(ship_name) - Create a new ship with the given name.")
-	print("3. move_ship(ship_name, destination_planet) - Move the ship to the destination planet.")
-	print("4. upgrade_ship(ship_name, planet_name) - Improve the speed of the ship.")
-	print("5. repair_ship(ship_name, planet_name) - Repaire the ship when it's broken using the resources of the current planet.")
+	print("3. move(ship_name, destination_planet) - Move the ship to the destination planet.")
+	print("4. upgrade(ship_name, planet_name) - Improve the speed of the ship.")
+	print("5. repair(ship_name, planet_name) - Repaire the ship when it's broken using the resources of the current planet.")
 	print("6. get_distance(ship_name, planet_name) - Get the distance between ship and the planet.")
 	print("7. planet_state(planet_name) - Display information about the planet")
 	print("8. ship_state(planet_name) - Display information about the ship")
@@ -138,7 +138,7 @@ def move(ship, planet):#Alessandro
 	# set waiting time
 	gaming_tools.set_when_ship_is_ready(ship, time.time() + deltatime)
 
-def upgrade_ship(ship, upgrade):#abdelaziz
+def upgrade(ship, upgrade):#abdelaziz
 	"""Uprade the ship
 	
 	Parameters
