@@ -229,7 +229,7 @@ def create_ship(name):#ammar
 	name: name of the ship (str)
 	"""
 	if not gaming_tools.planet_exists("Aldebaran"):
-		error(13)
+		error(11)
 		return
 	if gaming_tools.ship_exists(name):
 		error(3)
@@ -266,10 +266,6 @@ def error(value):# everyone just add error that you need
 	elif value == 10:
 		print("Error, the coordinates are not between 0 and 1000!")
 	elif value == 11:
-		print("")
-	elif value == 12:
-		print("Error, you re not on this planet!")
-	elif value == 13:
 		print("Error, Aldebaran is not created yet!")
 
 
