@@ -6,6 +6,7 @@ import random
 def help_game():#jugurtha
 	"""Explain how to use the functions of this game.
 	"""
+	print("To create Aldebaran and Epsilon Aurigae Use init_game()")
 	print("Available functions :")
 	print("1. create_planet(planet_name) - Create a new planet with the given name.")
 	print("2. create_ship(ship_name) - Create a new ship with the given name.")
@@ -22,7 +23,8 @@ def help_game():#jugurtha
 	print('\nAnd so on ..')
 
 def init_game():
-
+	"""Create Aldebaran and Epsilon Aurigae
+	"""
 	create_planet("Aldebaran", 0, 0)
 	create_planet("Epsilon Aurigae", 1000, 1000)
 	gaming_tools.set_planet_resources("Aldebaran", 0)
