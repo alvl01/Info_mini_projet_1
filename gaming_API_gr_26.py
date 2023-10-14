@@ -15,9 +15,9 @@ def help_game():
 	print("3. create_ship(ship_name) - Create a new ship with the given name.")
 	print("4. ship_state(planet_name) - Display information about the ship")
 	print("5. ship_is_ready(ship_name) - Check if the ship is ready to move")
-	print("6. move_ship(ship_name, destination_planet) - Move the ship to the destination planet.")
-	print("7. upgrade_ship(ship_name, upgrade) - Improve the speed of the ship.")
-	print("8. repair_ship(ship_name) - Repaire the ship when it's broken using the resources of the current planet.")
+	print("6. move(ship_name, destination_planet) - Move the ship to the destination planet.")
+	print("7. upgrade(ship_name, upgrade) - Improve the speed of the ship.")
+	print("8. repair(ship_name) - Repaire the ship when it's broken using the resources of the current planet.")
 
 	print("9. get_distance(ship_name, planet_name) - Get the distance between ship and the planet.")
 	print("10. reset_game() - Reset the game (prepare for a new game)")
