@@ -7,24 +7,24 @@ def help_game():
 	"""Explain how to use the functions of this game.
 	"""
 	print("First of all, use init_game() to initialise the game by creating the 'Aldebaran' and 'Epsilon Aurigae' planets")
-	print("\n\nAvailable functions :")
+	print("\nAvailable functions :\n")
 
-	print("\n1. create_planet(planet_name) - Create a new planet with the given name.") #done
-	print("\n2. planet_state(planet_name) - Display information about the planet")
+	print("1. create_planet(planet_name) - Create a new planet with the given name.") #done
+	print("2. planet_state(planet_name) - Display information about the planet")
 
-	print("\n2. create_ship(ship_name) - Create a new ship with the given name.")
-	print("\n8. ship_state(planet_name) - Display information about the ship")
-	print("\n8. ship_is_ready(ship_name) - Check if the ship is ready to move")
-	print("\n3. move_ship(ship_name, destination_planet) - Move the ship to the destination planet.")
-	print("\n4. upgrade_ship(ship_name, upgrade) - Improve the speed of the ship.")
-	print("\n5. repair_ship(ship_name) - Repaire the ship when it's broken using the resources of the current planet.")
+	print("3. create_ship(ship_name) - Create a new ship with the given name.")
+	print("4. ship_state(planet_name) - Display information about the ship")
+	print("5. ship_is_ready(ship_name) - Check if the ship is ready to move")
+	print("6. move_ship(ship_name, destination_planet) - Move the ship to the destination planet.")
+	print("7. upgrade_ship(ship_name, upgrade) - Improve the speed of the ship.")
+	print("8. repair_ship(ship_name) - Repaire the ship when it's broken using the resources of the current planet.")
 
-	print("\n6. get_distance(ship_name, planet_name) - Get the distance between ship and the planet.")
-	print("\n6. reset_game() - Reset the game (prepare for a new game)")
+	print("9. get_distance(ship_name, planet_name) - Get the distance between ship and the planet.")
+	print("10. reset_game() - Reset the game (prepare for a new game)")
 	
-	print("\nBasic usage:")
-	print('\nmove_ship("group 26 ship", "planet oranus")')
-	print('\nAnd so on .. Enjoy! ^_^')
+	print("Basic usage:")
+	print('move_ship("group 26 ship", "planet oranus")')
+	print('And so on .. Enjoy! ^_^')
 
 
 
@@ -37,7 +37,7 @@ def init_game():
 	gaming_tools.set_planet_resources("Aldebaran", 0)
 	gaming_tools.set_planet_resources("Epsilon Aurigae", 0)
 	print("planet Aldebaran and Epsilon Aurigae have been created and set to 0")
-	print("\nEverything is correctly set up, you can start creating planets and ships and enjoy the game!")
+	print("Everything is correctly set up, you can start creating planets and ships and enjoy the game!")
 
 
 
@@ -317,7 +317,7 @@ def reset_game():
 	"""Reset the game (prepare for a new game)
 	"""
 	gaming_tools.reset_game()
-	print("The game has been reset!\n")
+	print("The game has been reset!")
 	print("You can start a new round just by executing init_game()")
 
 	return
