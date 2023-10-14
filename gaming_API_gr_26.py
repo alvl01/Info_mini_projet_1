@@ -66,7 +66,7 @@ def planet_state(planet):#ammar#abdelaziz
 		return
 	location = gaming_tools.get_planet_location(planet)
 	resources = gaming_tools.get_planet_resources(planet)
-	print("the planet is in location x: %s and have %d resources" %(location, resources))
+	print("the planet is in location: %s and have %d resources" %(location, resources))
 
 def get_distance(ship, planet):
 	"""Calculate the distance between ship and planet
@@ -156,9 +156,11 @@ def upgrade(ship, upgrade):#abdelaziz
 		error(6)
 		return
 	planet = gaming_tools.get_ship_location(ship)
-	if gaming_tools.get_planet_resources(planet) < upgrade:
+	planet_resources = gaming_tools.get_planet_resources(planet)
+	if planet_resources < upgrade:
 		error(8)
 		return
+	gaming_tools.set_planet_resources(planet, planet_resources - upgrade)
 	speed = gaming_tools.get_ship_speed(ship) + upgrade
 	gaming_tools.set_ship_speed(ship, speed)
 	upgrade_time = 40 * (upgrade**2)
