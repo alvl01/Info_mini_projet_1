@@ -215,9 +215,9 @@ def upgrade(ship, upgrade):
 	
 	gaming_tools.set_planet_resources(planet, planet_resources - upgrade)
 
-	speed = gaming_tools.get_ship_speed(ship) + upgrade
-	gaming_tools.set_ship_speed(ship, speed)
-	upgrade_time = 40 * (speed**2 - gaming_tools.get_ship_speed(ship)**2)
+	speed_actual = gaming_tools.get_ship_speed(ship)
+	gaming_tools.set_ship_speed(ship, speed_actual + upgrade)
+	upgrade_time = 40 * ((speed_actual + upgrade)**2 - speed**2)
 
 	print("Ship is upgrading ... Please wait for %d seconds" % (int(upgrade_time)))
 
