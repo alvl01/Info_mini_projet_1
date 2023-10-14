@@ -69,6 +69,7 @@ def create_planet(name, coord_x, coord_y):
 
 
 
+
 def planet_state(planet):
 	"""Display informations about the planet
 
@@ -82,7 +83,8 @@ def planet_state(planet):
 		return
 	location = gaming_tools.get_planet_location(planet)
 	resources = gaming_tools.get_planet_resources(planet)
-	print("the planet is in location x: %s and have %d resources" %(location, resources))
+	print("the planet is in location: %s and have %d resources" %(location, resources))
+
 
 
 
@@ -104,11 +106,7 @@ def create_ship(name):
 	
 	gaming_tools.add_new_ship(name, 1, False)
 	gaming_tools.set_ship_location(name, "Aldebaran")
-
 	print("The ship %s has been created" % name)
-
-
-
 
 def ship_state(ship):
 	"""Diplay information about the ship
@@ -128,9 +126,6 @@ def ship_state(ship):
 	print("Speed : %d parsec/sec" % speed)
 	print(("Ship is broken" if broken else "ship is not broken!"))
 	print("Ship is ready" if ship_is_ready(ship) else "ship is not ready wait " + text_time(ready - time.time()) + "s")
-
-
-
 
 
 def ship_is_ready(ship):
@@ -182,7 +177,7 @@ def move_ship(ship, planet):
 	distance = get_distance(ship, planet)
 	deltatime = int(distance / ship_speed)
 	gaming_tools.set_ship_location(ship, planet)
-	
+
 	# is the ship broken
 	if not random.randint(0, 2):
 		gaming_tools.set_ship_broken(ship, True)
@@ -193,9 +188,7 @@ def move_ship(ship, planet):
 	# set waiting time
 	gaming_tools.set_when_ship_is_ready(ship, time.time() + deltatime)
 
-
-
-def upgrade_ship(ship, upgrade):
+def upgrade(ship, upgrade):
 	"""Uprade the ship
 	
 	Parameters
@@ -230,10 +223,7 @@ def upgrade_ship(ship, upgrade):
 
 	gaming_tools.set_when_ship_is_ready(ship, time.time() + upgrade_time)
 
-
-
-
-def repair_ship(ship):
+def repair(ship):
 	"""Repair the ship
 
 	Parameters
@@ -267,10 +257,6 @@ def repair_ship(ship):
 	gaming_tools.set_ship_broken(ship, False)
 	gaming_tools.set_planet_resources(planet, planet_resources - 3)
 
-
-
-
-
 def get_distance(ship, planet):
 	"""Calculate the distance between ship and planet
 
@@ -293,8 +279,6 @@ def get_distance(ship, planet):
 	planet_x, planet_y = gaming_tools.get_planet_location(planet)
 	return ((ship_x - planet_x) ** 2 + (ship_y - planet_y) ** 2) ** (1/2)
 
-
-
 def text_time(time):
 	"""Return the time in format "x min y s"
 
@@ -303,16 +287,11 @@ def text_time(time):
 	time: a time to format (int)
 
 	Returns
-	-------
+	------
 	fomated_time: formated time(str)
 	"""
 	return ("" if time // 60 == 0 else str(time // 60) + "min ") + str(time % 60) + "s"
-
-
-
-
-
-
+  
 def reset_game():
 	"""Reset the game (prepare for a new game)
 	"""
