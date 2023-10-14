@@ -150,7 +150,7 @@ def ship_is_ready(ship):
 
 
 
-def move_ship(ship, planet):
+def move(ship, planet):
 	"""Move the ship
 
 	Parameters
