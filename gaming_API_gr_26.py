@@ -66,6 +66,10 @@ def create_planet(name, coord_x, coord_y):
 	gaming_tools.set_planet_location(name, coord_x, coord_y)
 	print("The planet %s has been created" % name)
 
+
+
+
+
 def planet_state(planet):
 	"""Display informations about the planet
 
@@ -80,6 +84,10 @@ def planet_state(planet):
 	location = gaming_tools.get_planet_location(planet)
 	resources = gaming_tools.get_planet_resources(planet)
 	print("the planet is in location: %s and have %d resources" %(location, resources))
+
+
+
+
 
 def create_ship(name):
 	"""Create a new ship with a given name
@@ -98,7 +106,6 @@ def create_ship(name):
 	
 	gaming_tools.add_new_ship(name, 1, False)
 	gaming_tools.set_ship_location(name, "Aldebaran")
-
 	print("The ship %s has been created" % name)
 
 def ship_state(ship):
@@ -120,6 +127,7 @@ def ship_state(ship):
 	print(("Ship is broken" if broken else "ship is not broken!"))
 	print("Ship is ready" if ship_is_ready(ship) else "ship is not ready wait " + text_time(ready - time.time()) + "s")
 
+
 def ship_is_ready(ship):
 	"""Check if the ship is ready to move
 
@@ -138,7 +146,11 @@ def ship_is_ready(ship):
 
 	return gaming_tools.get_when_ship_is_ready(ship) < time.time()
 
-def move(ship, planet):#Alessandro
+
+
+
+
+def move_ship(ship, planet):
 	"""Move the ship
 
 	Parameters
@@ -202,6 +214,7 @@ def upgrade(ship, upgrade):
 		return
 	
 	gaming_tools.set_planet_resources(planet, planet_resources - upgrade)
+
 	speed = gaming_tools.get_ship_speed(ship) + upgrade
 	gaming_tools.set_ship_speed(ship, speed)
 	upgrade_time = 40 * (upgrade**2)
@@ -210,7 +223,7 @@ def upgrade(ship, upgrade):
 
 	gaming_tools.set_when_ship_is_ready(ship, time.time() + upgrade_time)
 
-def repair_ship(ship):
+def repair(ship):
 	"""Repair the ship
 
 	Parameters
@@ -278,8 +291,7 @@ def text_time(time):
 	fomated_time: formated time(str)
 	"""
 	return ("" if time // 60 == 0 else str(time // 60) + "min ") + str(time % 60) + "s"
-
-
+  
 def reset_game():
 	"""Reset the game (prepare for a new game)
 	"""
