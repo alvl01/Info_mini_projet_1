@@ -219,7 +219,7 @@ def upgrade(ship, upgrade):
 	gaming_tools.set_ship_speed(ship, speed_actual + upgrade)
 	upgrade_time = 40 * ((speed_actual + upgrade)**2 - speed_actual**2)
 
-	print("Ship is upgrading ... Please wait for %d seconds" % (int(upgrade_time)))
+	print("Ship is upgrading ... Please wait for ", text_time(int(upgrade_time)))
 
 	gaming_tools.set_when_ship_is_ready(ship, time.time() + upgrade_time)
 
